@@ -1,0 +1,25 @@
+<div id="header">
+	<p>
+		#<% if session[:current_user_id] != nil %>
+			<%= session[:current_user_id] %>
+			#<%= link_to 'Sign Out', session[:current_user_id] = nil %>
+		#<% end %>
+		
+		#<% if session[:current_user_id] === nil %>
+			#<p style="display:inline-block">
+			#	<%= link_to '[Sign Up]', new_user_path %>
+			#</p>
+			#<p style="display:inline-block">
+			#	<%= link_to ' | Sign In', users_path %>
+			#</p>
+			
+		#<% end %>
+	</p>
+	
+	<h1 style="display:inline-block">
+		<%= link_to 'Dope Fits', fits_path %>
+	</h1>
+	
+</div>
+<br><br>
+

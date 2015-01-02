@@ -1,0 +1,29 @@
+<%= render 'header' %>
+
+<br><br><br><br>
+
+<%= link_to "Upload Fit", new_fit_path %>
+<h2>Dope Fits:</h2>
+
+<table>
+	<tr>Title:</tr>
+	
+	<% @fit.each do |afit| %>
+		<tr>
+			<td>
+				<%= link_to fit_path(afit) do %>
+					<%= afit.title %>
+				<% end %>
+			</td>
+			<td>
+				<%= "#{afit.comments.count} comments" %>
+			</td>
+			<% if session[:current_user_id] == "admin" %>
+				<td>
+					<%= button_to 'Delete', afit, :method=>:delete, :class=>:destroy %>
+				</td>
+			<% end %>
+		</tr>
+	<% end %>
+	
+</table>

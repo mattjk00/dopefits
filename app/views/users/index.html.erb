@@ -1,0 +1,20 @@
+<%= link_to 'Back', fits_path %>
+<br><br><h2>Sign In</h2>
+
+<%= form_for @login_user, :url => { :action => :signin } do |f| %>
+	<p style="display:inline-block">Username:</p>
+	<%= f.text_field :name %>
+	<br>
+	<p style="display:inline-block">Password:</p>
+	<%= f.password_field :password %>
+	
+	<% f.submit %><button>Sign In</button>
+<% end %> 
+
+<%= session[:current_user_id] %>
+<br><h1>List of dope users</h1>
+<ol>
+	<% @user.each do |user| %>
+		<li><%= user.name %></li>
+	<% end %>
+</ol>

@@ -1,0 +1,27 @@
+<%= link_to 'Back', fits_path %>
+<br><br><br><h1>Sign up for DopeFits!</h1>
+
+<%= form_for @user do |f| %>
+
+	<% if @user.errors.any? %>
+		<ul>
+			<% @user.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+		</ul>
+	<% end %>
+	
+	<div style="display:inline-block">
+		<% f.label :name %><p style="display:inline-block">User Name:</p>
+		<%= f.text_field :name %>
+	</div>
+	<br>
+	<div style="display:inline-block">
+		<% f.label :password %><p style="display:inline-block">Password:</p>
+		<%= f.password_field :password %>
+	</div>
+	<br>
+	
+	<br>
+	<% f.submit %><button>Sign Up!</button>
+<% end %>

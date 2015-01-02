@@ -1,0 +1,22 @@
+<%= render 'defaultpage' %>
+
+<br><br><h1>Upload new Dope Fit</h1>
+
+<%= form_for @fit, url: fits_path do |f| %>
+	<div style="display:inline-block">
+		<% f.label :title %><h3 style="display:inline-block">Enter title:</h3>
+		<%= f.text_field :title %>
+	</div>
+	<br>
+	<div style="display:inline-block">
+		<% f.label :imageurl %><h3 style="display:inline-block">Upload Image:</h3>
+		<%= f.text_field :imageurl %>
+	</div>
+	<br>
+	<div style="display:inline-block">
+		<% f.label :description %><h3 style="display:inline-block">Description:</h3>
+		<%= f.text_area :description %>
+	</div>
+	<br>
+	<p><%= f.submit %></p>
+<% end %>

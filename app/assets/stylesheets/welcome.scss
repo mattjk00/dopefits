@@ -1,0 +1,62 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body
+{
+	font-family:"comic sans ms";
+	background-color:#888;
+}
+
+h1
+{
+	color:blue;
+}
+
+#header
+{
+	text-align:center;
+	border-bottom:1px solid black;
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:red;
+}
+
+table
+{
+	color:red;
+}
+
+#fit
+{
+	width:50%;
+	border:1px solid black;
+	margin-left:25%;
+	text-align:center;
+	border-radius:2px;
+	background-color:white;
+}
+
+td
+{
+	border:1px solid black;
+	background-color:#888;
+	padding:5px;
+	text-align:center;
+}
+
+#comments
+{
+	width:75%;
+	border:1px solid black;
+	margin-left:12.5%;
+	text-align:center;
+	background-color:white;
+}
+
+.usercomment
+{
+	width:100%;
+}

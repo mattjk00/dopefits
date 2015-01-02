@@ -1,0 +1,29 @@
+<%= render 'header' %>
+
+<br><br><br>
+<div id="fit">
+	<h1><%= @fit.title %></h1>
+	<%= image_tag(@fit.imageurl, width:'400px', height:'225px') %>
+	<p><%= @fit.description %></p>
+</div>
+
+<%= form_for([@fit, @fit.comments.build]) do |f| %>
+	<p>Write A Comment:</p> <%= f.text_area :body %>
+	<% f.submit %><button>Post</button>
+<% end %>
+
+<div id ="comments">	
+	<h3>Comments</h3>
+	<% if @fit.comments.count != 0 %>
+		<table>
+			<% @fit.comments.each do |comment| %>
+				<tr>
+					<td><%= comment.poster %></td>
+					<td class="usercomment"><%= comment.body %></td>
+				</tr>
+			<% end %>
+		</table>
+	<% else %>
+		<p>No comments yet</p>
+	<% end %>
+</div>
