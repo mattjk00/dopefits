@@ -10,6 +10,8 @@
 <%= form_for([@fit, @fit.comments.build]) do |f| %>
 	<p>Write A Comment:</p> <%= f.text_area :body %>
 	<% f.submit %><button>Post</button>
+	
+	<%= flash[:notice] %>
 <% end %>
 
 <div id ="comments">	
@@ -20,6 +22,10 @@
 				<tr>
 					<td><%= comment.poster %></td>
 					<td class="usercomment"><%= comment.body %></td>
+
+					<% if comment.poster == session[:current_user_id] %>
+						<td><%= button_to 'Delete', [comment.fit, comment], :method=>:delete, :class=>:destroy %></td>
+					<% end %>
 				</tr>
 			<% end %>
 		</table>
