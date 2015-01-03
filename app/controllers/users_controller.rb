@@ -25,11 +25,20 @@ class UsersController < ApplicationController
 		@user = User.new(user_params)
 		@check_user = User.find_by(name: @user.name)
 		
-		if @user.password = @check_user.password
-			session[:current_user_id] = @user.name
+		if @check_user != nil
+			if @user.password == @check_user.password
+				session[:current_user_id] = @user.name
+				
+				redirect_to fits_path
+			else
+				flash[:notice] = "The username or password is incorrect"
+				redirect_to users_path
+			end
+		else
+			flash[:notice] = "The username or password is incorrect"
+			redirect_to users_path
 		end
 		
-		redirect_to fits_path
 	end
 	
 	def logout

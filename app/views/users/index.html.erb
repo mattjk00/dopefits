@@ -9,6 +9,7 @@
 	<%= f.password_field :password %>
 	
 	<% f.submit %><button>Sign In</button>
+	<%= flash[:notice] %>
 <% end %> 
 
 <%= session[:current_user_id] %>
