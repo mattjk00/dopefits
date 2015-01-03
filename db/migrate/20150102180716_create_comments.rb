@@ -2,7 +2,7 @@ class CreateComments < ActiveRecord::Migration
   def change
     create_table :comments do |t|
       t.string :body
-      t.string :poster, default: => session[:current_user_id]
+      t.string :poster
       t.references :fit, index: true
 
       t.timestamps null: false
