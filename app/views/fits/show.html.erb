@@ -7,13 +7,17 @@
 	<p><%= @fit.description %></p>
 </div>
 
-<%= form_for([@fit, @fit.comments.build]) do |f| %>
-	<p>Write A Comment:</p> <%= f.text_area :body %>
-	<% f.submit %><button>Post</button>
-	
-	<%= flash[:notice] %>
-<% end %>
+<br>
+<div id="writecomment">
+	<%= form_for([@fit, @fit.comments.build]) do |f| %>
+		<p>Write A Comment:</p> <%= f.text_area :body %>
+		<% f.submit %><button>Post</button>
+		
+		<%= flash[:notice] %>
+	<% end %>
+</div>
 
+<br>
 <div id ="comments">	
 	<h3>Comments</h3>
 	<% if @fit.comments.count != 0 %>
